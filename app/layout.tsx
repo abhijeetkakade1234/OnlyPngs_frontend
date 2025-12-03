@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FirebaseAnalytics from "@/components/firebase-analytics";
 
 export const metadata: Metadata = {
   title: "OnlyPngs - Financial Autonomy. Execution Velocity.",
@@ -21,7 +22,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <FirebaseAnalytics />
+        {children}
+      </body>
     </html>
   );
 }

@@ -39,47 +39,70 @@ const FloatingDockMobile = ({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={cn("relative block md:hidden", className)}>
+    <div className={cn("relative hidden", className)}>
       <AnimatePresence>
         {open && (
-          <motion.div
-            layoutId="nav"
-            className="absolute inset-x-0 bottom-full mb-2 flex flex-col gap-2"
-          >
-            {items.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                exit={{
-                  opacity: 0,
-                  y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
-                }}
-                transition={{ delay: (items.length - 1 - idx) * 0.05 }}
-              >
-                <a
-                  href={item.href}
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpen(false)}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm -z-10"
+            />
+            {/* Menu Items */}
+            <motion.div
+              layoutId="nav"
+              className="absolute inset-x-0 bottom-full mb-3 flex flex-col gap-3 max-h-[70vh] overflow-y-auto"
+            >
+              {items.map((item, idx) => (
+                <motion.div
                   key={item.title}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    y: 10,
+                    scale: 0.9,
+                    transition: {
+                      delay: idx * 0.05,
+                    },
+                  }}
+                  transition={{ delay: (items.length - 1 - idx) * 0.05 }}
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
-                </a>
-              </motion.div>
-            ))}
-          </motion.div>
+                  <a
+                    href={item.href}
+                    onClick={() => {
+                      if (item.href.startsWith("/")) {
+                        setOpen(false);
+                      }
+                    }}
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900 shadow-lg active:scale-95 transition-transform touch-manipulation"
+                  >
+                    <div className="h-5 w-5">{item.icon}</div>
+                  </a>
+                </motion.div>
+              ))}
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800 shadow-lg active:scale-95 transition-transform touch-manipulation"
+        aria-label={open ? "Close navigation" : "Open navigation"}
       >
-        <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+        <IconLayoutNavbarCollapse
+          className={cn(
+            "h-6 w-6 text-neutral-500 dark:text-neutral-400 transition-transform",
+            open && "rotate-180"
+          )}
+        />
       </button>
     </div>
   );
@@ -99,7 +122,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-neutral-900",
+        "mx-auto flex h-16 items-end gap-3 md:gap-4 rounded-2xl bg-gray-50 dark:bg-neutral-900 px-3 md:px-4 pb-2 md:pb-3 shadow-lg",
         className,
       )}
     >

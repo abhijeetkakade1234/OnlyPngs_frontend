@@ -51,7 +51,7 @@ export default function Footer() {
                 Discord
               </Link>
               <Link
-                href="https://x.com"
+                href="https://x.com/OnlyPngs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"

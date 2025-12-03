@@ -79,10 +79,10 @@ export default function DocsPage() {
                     <strong className="text-white">non-custodial</strong> model.
                   </p>
                   <p className="text-xl text-white font-semibold mb-4">
-                    "We never hold or access your master wallet keys (private key/seed phrase)."
+                    &ldquo;We never hold or access your master wallet keys (private key/seed phrase).&rdquo;
                   </p>
                   <p className="text-gray-300">
-                    Explain that funds are held in the user's personal{" "}
+                    Explain that funds are held in the user&apos;s personal{" "}
                     <strong className="text-white">Smart Wallet</strong> address, which is fully owned
                     by the user.
                   </p>
@@ -129,7 +129,7 @@ export default function DocsPage() {
                 <p className="text-gray-400 mb-6">
                   Instruct users to ask the AI,{" "}
                   <code className="bg-gray-900 px-3 py-1 rounded text-white">
-                    "What's my wallet address?"
+                    &ldquo;What&apos;s my wallet address?&rdquo;
                   </code>
                 </p>
                 <h4 className="text-xl font-semibold mb-3 text-white">
@@ -190,10 +190,10 @@ export default function DocsPage() {
                 </h4>
                 <div className="bg-gray-900 p-4 rounded-lg space-y-2 mb-6">
                   <code className="block text-white">
-                    "What's my balance?"
+                    &ldquo;What&apos;s my balance?&rdquo;
                   </code>
                   <code className="block text-white">
-                    "Check my USDC balance."
+                    &ldquo;Check my USDC balance.&rdquo;
                   </code>
                 </div>
                 <h4 className="text-xl font-semibold mb-3 text-white">
@@ -217,7 +217,7 @@ export default function DocsPage() {
                 </h4>
                 <div className="bg-gray-900 p-4 rounded-lg mb-6">
                   <code className="text-white">
-                    "Transfer 20 AVAX to 0xrecipient..."
+                    &ldquo;Transfer 20 AVAX to 0xrecipient...&rdquo;
                   </code>
                 </div>
                 <h4 className="text-xl font-semibold mb-3 text-white">
@@ -225,7 +225,7 @@ export default function DocsPage() {
                 </h4>
                 <p className="text-gray-400 mb-6">
                   <code className="bg-gray-800 px-2 py-1 rounded">SmartTransferAction</code> - Encodes the transaction
-                  and submits it gaslessly using your platform's Paymaster
+                  and submits it gaslessly using your platform&apos;s Paymaster
                   sponsorship.
                 </p>
               </div>

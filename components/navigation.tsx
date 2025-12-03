@@ -37,7 +37,7 @@ export default function Navigation() {
       icon: (
         <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
-      href: "https://x.com",
+      href: "https://x.com/OnlyPngs",
     },
     {
       title: "GitHub",
@@ -49,9 +49,8 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
+    <nav className="fixed bottom-2 left-1/2 -translate-x-1/2 z-50 md:bottom-4">
       <FloatingDock items={links} />
     </nav>
   );
 }
-
