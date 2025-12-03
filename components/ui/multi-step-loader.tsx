@@ -57,7 +57,7 @@ const LoaderCore = ({
           y: -(value * stepHeight),
         }}
         transition={{
-          duration: 0.3,
+          duration: 0.15,
           ease: "easeInOut",
         }}
       >

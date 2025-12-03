@@ -30,7 +30,7 @@ const loadingStates = [
 export function Loader3D({
   isLoading = true,
   onComplete,
-  duration = 150,
+  duration = 50,
 }: Loader3DProps) {
   useEffect(() => {
     if (!isLoading && onComplete) {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import FirebaseAnalytics from "@/components/firebase-analytics";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export const metadata: Metadata = {
   title: "OnlyPngs - Financial Autonomy. Execution Velocity.",
@@ -55,6 +56,7 @@ export default function RootLayout({
           msOverflowStyle: "none",
         }}
       >
+        <SmoothCursor />
         <FirebaseAnalytics />
         {children}
       </body>
