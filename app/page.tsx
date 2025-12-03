@@ -9,7 +9,10 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main
+      className="min-h-screen"
+      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+    >
       <Navigation />
       <Hero />
       <ProductSection />
@@ -21,4 +24,3 @@ export default function Home() {
     </main>
   );
 }
-

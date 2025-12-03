@@ -57,6 +57,23 @@
   }
 }
 
+/* Hide scrollbars - outside layer for better compatibility */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -74,4 +91,3 @@
     animation: gradientShift 15s ease infinite;
   }
 }
-
